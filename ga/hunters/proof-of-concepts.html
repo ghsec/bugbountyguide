@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>როგორ შევქმნა დეტალური proof of concept?</title>
+  <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/stylesheet.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <a class="button" href="../index.html">← Home</a>
+    </nav>
+    <h3>როგორ შევქმნა დეტალური proof of concept?</h3>
+    <p>მე მაქვს პატარა საიდუმლო თქვენთვის რომელის სრულიად შეცვლის თქვენს მიერ შექმნილ proof of concepts: <b>მიყევით წესებს როგორიცაა  <a href="https://en.wikipedia.org/wiki/White_hat_(computer_security)">white hat</a> და შემდეგ, შექმენით proof of concept როგორც <a href="https://en.wikipedia.org/wiki/Black_hat">black hat</a>.</b> ამით ვგულისხმობ, რომ ყოველთვის მიყევით წესებს და როცა აღმოაჩენთ სისუსტეთ გაატარეთ დემონსტრაცია თუ როგორ შეიძლება ამ სისუსტის გამოყენება. ეს იმას არ ნიშნავს რომ მოვახდინოთ აუცილებელია არასანქცირებული შეღწევა. ეს უბრალოდ იმასთვისაა საჭირო რომ გაიგოთ თუ რა შედეგს მოიტანს თქვენს მიერ ნახული სისუსტე და ამის შემდეგ საქმეს მიუდგეთ პროგრამით გათვალისწინებული წესების დაცვით. ეს იმისთვის რომ შევქმნათ ისეთი რამ რაც მუშაობს რეალურად. ამ მიდგომის ნახვა შეგიძლიათ <a href="https://hackerone.com/reports/289823">ამ რეპორტში</a>.</p>
+
+    <h3>Hall of PoC™</h3>
+    <p>proof of concepts (PoCs) ეს ჩამონათვალი თქვენთვისაა თუ როდის უნდა შევესრულოთ სისუსტის დემონსტრაცია. PoCs-ები ესე უნდა იყოს დემონსტრირებული რომ პროგრამისთვის იყოს გასაგები და თქვენ არ მოუტანთ მომხმარებელს რაიმე სახის ზიანს. ყოველთვის მიყევით პროგრამის წესების პოლიტიკას; პროგრამის უსაფრთხოების პოლიტიკა პრიორიტეტია ყოველთვის.</p>
+    <table>
+      <tr>
+        <th>Issue type</th>
+        <th>PoC</th>
+      </tr>
+      <tr>
+        <td>Cross-site scripting</td>
+        <td><a href='javascript:alert(document.domain)'><code>alert(document.domain)</code></a> or <code>setInterval`alert\x28document.domain\x29`</code> if you have to use backticks.<sup> <a href="https://medium.com/@know.0nix/jumping-to-the-hell-with-10-attempts-to-bypass-devils-waf-4275bfe679dd">[1]</a></sup></td>
+      </tr>
+      <tr>
+        <td>Arbitrary code execution</td>
+        <td>
+          <ul>
+            <li>წაკითხვა: <code>cat /proc/1/maps</code>
+            <li>ჩაწერა: <code>touch /root/your_username</code>
+            <li>შესრულება: <code>id</code></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>SQL injection</td>
+        <td>
+          <p>უმეტეს შემთხვევაში SQL ინექციის დემონსტრირებისათვის საკმარისია მხოლოდ აჩვენოთ SQL სერვერის ვერსია.</p>
+          <ul>
+            <li>MySQL და MSSQL: <code>SELECT @@version</code></li>
+            <li>Oracle: <code>SELECT version FROM v$instance;</code></li>
+            <li>Postgres SQL: <code>SELECT version()</code></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Unvalidated redirect</td>
+        <td>
+          <ul>
+            <li>დააყენეთ თქვენივე საიტის gamsvlel ენდპოინტ-ზე სამიზნის მსგავსი ყალბი გვერდი, რომელიც არის სამიზნის ავტორიზაციის ყალბი ასლი. დარწმუნდით რომ თქვენი ყალბი გვერდი სტატიკურია და არსად არ აგზავნის სენსიტიურ ინფორმაციას.</li>
+            <li>თუ სამიზნე იყენებს <a href="https://en.wikipedia.org/wiki/OAuth">OAuth</a>, თქვენ შეგიძლიათ გაატარათ OAuth token-ი თქვენი სერვერის გავლით. <sup><a href="https://ngailong.wordpress.com/2017/08/07/uber-login-csrf-open-redirect-account-takeover/">[2]</a></sup></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Information disclosure</td>
+        <td>მაგალითად თქვენ აღმოაჩინეთ id პარამეტრი რომელზეც ასრულებთ მანიპულაციას (<code>?id=1337</code>) და აღმოაჩინეთ სხვა მომხმარებლის სენსიტიური ინფორმაცია, აღარ გააგრძელოთ და დაარეპორტეთ.</td>
+      </tr>
+      <tr>
+        <td>Cross-site request forgery</td>
+        <td>
+          ან მიამაგრეთ ფაილი ან კიდე კოდში ჩასვით სპეციალური კოდი რეპორტის ველში.
+          <pre><code>&lt;form action=&quot;http://example.com/settings&quot; method=&quot;POST&quot;&gt;
+   &lt;input type=&quot;hidden&quot; name=&quot;username&quot; value=&quot;example&quot;/&gt;
+   &lt;input type=&quot;hidden&quot; name=&quot;password&quot; value=&quot;password1234&quot;/&gt;
+   &lt;input type=&quot;submit&quot; value=&quot;Click me&quot;/&gt;
+&lt;/form&gt;</code></pre>
+          რეალურ მაგალითზე, დამალეთ ფორმა (<code>style="display:none;"</code>) და გარდაქმენით ის auto submit-ად, ან ისე გააკეთეთ რომ ის იყოს სამიზნის კომპონენტის მსგავსი.
+        </td>
+      </tr>
+      <tr>
+        <td>Server-side request forgery</td>
+        <td>შეეცადეთ მიიღოთ არა საზიანო ფაილი.</td>
+      </tr>
+      <tr>
+        <td>Local file inclusion</td>
+        <td>აქაც იგივე ნაირად. არა საზიანო ინფორმაცია.</td>
+      </tr>
+      <tr>
+        <td>XML External Entity</td>
+        <td>
+          გამოიტანეთ არა საზიანო ინფორმაცია. <sup><a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing#Examples">[3]</a></sup>
+          <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+  &lt;!DOCTYPE foo [  
+   &lt;!ELEMENT foo ANY &gt;
+   &lt;!ENTITY xxe SYSTEM &quot;file:///dev/random&quot; &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</code></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Sub-domain takeover</td>
+        <td>
+          აიღეთ კონტროლი სუბდომენზე და შექმენით დაფარულად უსაფრთხო ფაილი. არ გამოაჩინოთ კინტენტი index გვერდზე. შეგიძლიათ გამოიყენოთ ეს POC რომელსაც ნახავთ <a href="../files/sub-domain_takeover.html">აქ</a>.
+          <img style="margin-left: 0" src="../assets/img/sub-domain_takeover_poc.png">
+        </td>
+      </tr>
+    </table>
+
+    <nav class="controls">
+      <a class="button" href="is-my-report-valid.html">← წინა</a> <a class="button next" href="books.html">შემდეგი →</a>
+    </nav>
+
+    <footer>
+      <small>© Copyright EdOverflow - <a href="https://liberapay.com/EdOverflow">პროექტის მხარდაჭერა</a> - ₿ <code>1E2fZRNrrkCKPnWpKZAsJzByBoyoBURADN</code></small>
+    </footer>
+  </div>
+</body>
+</html>

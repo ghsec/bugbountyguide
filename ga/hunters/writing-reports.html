@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>როგორ გამოიყურება კარგი რეპორტი?</title>
+  <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/stylesheet.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <a class="button" href="../index.html">← Home</a>
+    </nav>
+    <h3>როგორ გამოიყურება კარგი რეპორტი?</h3>
+    <p>ლეგენდის მიხედვით რომ Bug Bounty Hunter-ებს კარგი რეპორტის დაწერა შეუძლიათ ძილშიც კი. კარგი, ხუმრობა ხუმრობით მაგრამ კარგი რეპორტის დასაწერად მიყევით შემდეგ რჩევას.</p>
+
+    <h4>რჩევა</h4>
+    <p>აღწერის პირველ ეტაპზე უნდა მოკლე რეზიუმე, რომელშიც იქნება გამოხატული თქვენი აზრი. რჩევები შეიძლება იყოს მოკლე როგორიცაა:</p>
+    <blockquote>example.com is vulnerable to DOM-based XSS via the <code>q</code> parameter.</blockquote>
+
+    <p>ან დეტალურად როგორიცაა:</p>
+    <blockquote>https://imgur.com/vidgif/url endpoint  vulnerable to a SSRF vulnerability which allows an attacker to craft connections originating from imgur servers to any destination on the internet and imgur internal network and craft outgoing UDP-packets / telnet-based protocol sessions (for example, to connect to SMTP servers from imgur and send spam). <sup><a href="https://hackerone.com/reports/115748">[1]</a></sup></blockquote>
+
+    <h4>Vulnerability Description</h4>
+    <p>ამ განყოფილებაში მოყვანილია ის ყველა დეტალი რომელიც დაკავშირებული თქვენს მიერ ჩატარებულ კვლევასთან. თუ რა იპოვეთ და დეტალურად ახსენით ტექნიკური მომენტი თუ რა იწვევს პრობლემას. არსებობს გამონაკლისები თუმცა ეს თავი შეიძლება იყოს გამოტოვებული. ესეც პოპულარული ინგლისური იდიომა:</p>
+    <blockquote>"A picture is worth a thousand words."</blockquote>
+
+    <p>იგივეს თქმა შეიძლება შესანიშნავ proof of concept-ზე:</p>
+    <blockquote>"A phenomenal security vulnerability proof of concept is worth a thousand words."<br>- Probably Gandhi</blockquote>
+
+ 	<h4>Proof of concept</h4>
+ 	<p>proof of concept ეს ის ადგილია სადაც უნდა ეწარმოადგინოთ საუკეთესო თვისებები. შეადგინეთ ის ისე რომ იყოს პროგრამისთვის მარტივად გასაგები. თუ თქვენს მიერ ნაპოვნი სისურსტეა cross-site scripting, როგორიცაა <a href='javascript:alert(document.domain)'><code>alert(document.domain)</code></a> დაჭირდება დიდი დრო რომ პროგრამამ გამოავლინოს პრობლემა.</p>
+
+ 	<h4>Browsers verified in</h4>
+ 	<p>იმ შემთხვევაში როცა არ არის ბრაუზერის პრობლემა, კარგი თვისებაა თუ რეპორტში მოვიხსენებთ თუ რომელი ვერსიის ბრაუზერით გატარდა შეტევა. ეს კარგად დაეხმარება იმ ადამიანებს ვინც დგას პროგრამის მიღმა. Google Chrome-ში, ვერსიის ნახვა შესაძლებელია <code>chrome://version/</code> და Mozilla Firefox-ში შეგიძლიათ გადახვიდეთ <code>about:</code> განყოფილებაში.</p>
+
+ 	<h4>Mitigation</h4>
+ 	<p>თუ ტქვენ მიყვებოდით რჩევებს  <i><a href="get-started.html">"როგორ დავიწყო bug bounty hunting-ი? როგორ გავაუმჯობესოთ უნარები?"</a></i>, მაშინ თქვენ უნდა შეძლოთ პროგრამაზე ახსნა თუ როგორ უნდა გატარდეს აღნიშნული პრობლემის გამოსწორება. ამასთან ერთად არ იქნება ცუდი თუ დაუკავშირებთ  <i><a href="https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series">OWASP Prevention</a></i> cheat sheet.</p>
+
+  <h4>Spellcheck</h4>
+  <p>ჩემსგან იქნება რჩევა რომ დიდი ყურადღება მიაქციოთ გრამატიკულ ნაწილსაც და იპოვოტ გრამატიკული შეცდომები თქვენს რეპორტში <a href="https://app.grammarly.com/">Grammarly</a>. ზოგიერთები ამტკიცებენ თუ რეპორტი შეიცავს სენსიტიურ ინფორმაციას ეს ინფორმაცია არ უნდა იყოს გასშვებული მესამე მხარესთან.</p>
+  <img id="small_img" src="../assets/img/grammarly.jpg">
+
+ 	<h4>Altogether</h4>
+ 	<pre><code># Summary
+...
+
+# Vulnerability details
+...
+
+# Impact
+...
+
+# Proof of concept
+...
+
+# Browsers verified in
+...
+
+# Mitigation
+...</code></pre>
+
+    <h3>Templates</h3>
+    <p>რეპორტის არსი შესაძლოა მეორდებოდეს და ამავდროულად ყველა წუთს დიდი მნიშვნელობა აქვს. ამიტომ საჭიროა შეიმუშაოთ სპეციალური შაბლონები რომლების დააჩქარებენ რეპორტს. <a href="https://twitter.com/fransrosen">Frans Rosén</a>, ერთერთი ყველაზე ჭკვიანი Bug Bounty Hunter-მა გამოაქვეყნა  <a href="https://github.com/fransr/template-generator">ხელსაწყო</a> რომელიც გივსებთ რეპორტის შაბლონს. დაიწყეთ ყველა სახის შაბლონების წერა და შეეცადეთ ზემოთ მოყვანილი ყველა მოთხოვნა შეავსოთ!</p>
+
+    <pre><code>$ git clone https://github.com/fransr/template-generator
+$ cd template-generator
+$ php -S localhost:8000</code></pre>
+
+    <video width="320" height="240" autoplay loop>
+      <source src="../assets/cat.mp4" type="video/mp4" />
+    </video>
+
+    <nav class="controls">
+      <a class="button" href="writing-reports.html">← წინა</a> <a class="button next" href="../index.html">Home →</a>
+    </nav>
+
+    <footer>
+      <small>© Copyright EdOverflow - <a href="https://liberapay.com/EdOverflow">პროექტის მხარდაჭერა</a> - ₿ <code>1E2fZRNrrkCKPnWpKZAsJzByBoyoBURADN</code></small>
+    </footer>
+  </div>
+</body>
+</html>

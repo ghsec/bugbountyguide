@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bug Bounty Guide</title>
+  <meta property="og:url" content="https://bugbountyguide.com/" />
+  <meta property="og:title" content="Bug Bounty Guide" />
+  <meta property="og:description" content="Bug Bounty Guide გაშვებულია bug bounty პროგრამებისთვის და bug bounty hunters-თვის." />
+  <meta property="og:image" content="assets/img/favicon.png" />
+  <meta name="description" content="Bug Bounty Guide is a launchpad for bug bounty programs and bug bounty hunters. A great place to learn about the various aspects of bug bounties, and how you can improve your skills in this area. This service also provides you with a versatile set of tools that can assist you during the launching process of your program or help you find valid security issues on bug bounty programs.">
+  <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <meta property="og:image" content="https://bugbountyguide.com/assets/img/favicon.png" />
+  <link rel="shotcut icon" href="assets/img/favicon.png">
+  <meta name="theme-color" content="#1EAEDB">
+</head>
+
+<body onload="document.body.style.opacity='1'" class="index">
+  <nav class="nav-down">
+    <b><i><a href="" id="bug-bounty-guide">Bug Bounty Guide</a></i></b>
+  </nav>
+  <div class="row">
+    <div class="one-half column" id="blue">
+      <div class="wrapper">
+        <h1>მე ვარ <b><i>bug bounty <span>program</span></i></b></h1>
+        <a href="#" class="button button-landing" id="button">გადასვლა →</a>
+      </div>
+    </div>
+    <div class="one-half column" id="red">
+      <div class="wrapper">
+        <h1>მე ვარ <b><i>bug bounty <span>hunter</span></i></b></h1>
+        <a href="#" class="button button-landing" id="button">გადასვლა →</a>
+      </div>
+    </div>
+  </div>
+  <div id="target"></div>
+  <div class="wrapper">
+    <h1>🖇 Bug Bounty Guide</h1>
+    <p><i>Bug Bounty Guide</i> გაშვებულია bug bounty programs-ებისთვის და bug bounty hunters-თვის. ეს არის საუკეთესო ადგილი შეისწავლოთ bug bounties-ის ასპექტების შესახებ და გაიღრმაოთ ცოდნა ამ სფეროში. ეს სერვისი გაძლევთ ხელსაწყოების უნივერსალურ საშუალებას, რომელიც დაგეხარებათ სწორედ გაუშვათ Bug Bounty პროგრამა ან იპოვოთ ვალიდური უსაფრთხოების სისუსტე Hunting-ის პროცესში.</p>
+    <div class="row margin-bottom">
+      <div class="one-half column">
+        <h4>📘 I am a <b id="program">bug bounty program</b></h4>
+        <ul>
+          <li><a href="programs/get-started.html">როგორ გაუშვა bug bounty program-ა?</a></li>
+          <li><a href="programs/writing-security-policies.html">როგორც ავღწერო მისაღები უსაფრთხოების პოლიტიკა?</a></li>  
+          <li><a href="programs/determining-the-bounty-amount.html">როგორ გავნსაზღრო ფულადი ჯილდოს რაოდენობა?</a></li>
+          <li><a href="programs/making-triage-easier.html">როგორ გავამარტივო სორტირების პროცესი?</a></li>
+          <li><a href="programs/expectations.html">რას უნდა ელოდონ Bounty Hunter-ებმა პროგრამისგან?</a></li>
+          <li><a href="programs/platform.html">რა პლატფორმებს ვიყენებ?</a></li>
+          <li><a href="programs/tools.html">რა ხელსაწყოებს ვიყენებ?</a></li>
+        </ul>
+      </div>
+      <div class="one-half column">
+        <h4>📕 I am a <b id="hunter">bug bounty hunter</b></h4>
+        <ul>
+          <li><a href="hunters/get-started.html">როგორ დავიწყო bug bounty hunting-ი? როგორ გავაუმჯობესოთ უნარები?</a></li>
+          <li><a href="hunters/platforms.html">რა პლატფორმები გამოვიყენო?</a></li>
+          <li><a href="hunters/is-my-report-valid.html">არის ჩემი რეპორტი ვალიდური?</a></li>
+          <li><a href="hunters/proof-of-concepts.html">როგორ შევქმნა დეტალური proof of concept?</a></li>
+          <li><a href="hunters/books.html">რომელი წიგნებია აუცილებლად წასაკითხი?</a></li>
+          <li><a href="hunters/tools.html">რა ხელსაწყოები უნდა გამოვიყენო?</a></li>
+          <li><a href="hunters/expectations.html">რას ელოდებიან ჩემსგან bug bounty programs-ები?</a></li>
+          <li><a href="hunters/writing-reports.html">როგორ გამოიყურება კარგი რეპორტი?</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="one-half column">
+        <h4>📚 General topics</h4>
+        <ul>
+          <li><a href="general/terminology.html">ტერმინოლოგია</a></li>
+          <li><a href="general/formulating-questions.html">როგორ ჩამოვაყალიბო კითხვა?</a></li>
+        </ul>
+      </div>
+      <div class="one-half column">
+        <h4>🛠 პროექტის მხარდაჭერა</h4>
+        <ul>
+          <li><a href="https://github.com/EdOverflow/bugbountyguide">ცვლილებების შემოთავაზებები GitHub-ზე.</a></li>
+          <li><a href="https://twitter.com/intent/tweet?text=Bug%20Bounty%20Guide%20%E2%80%94%20a%20launchpad%20for%20bug%20bounty%20programs%20and%20bug%20bounty%20hunters%3A%20https%3A%2F%2Fbugbountyguide.com%2F">გავრცელება.</a></li>
+          <li><a href="https://liberapay.com/EdOverflow">პროექტის მხარდაჭერა.</a></li>
+        </ul>
+      </div>
+    </div>
+
+      <h3>ავტორის შესახებ</h3>
+      <p><a href="https://twitter.com/EdOverflow">EdOverflow</a> არის უსაფრთხოების მკლევარი, bug bounty hunter, და აქვს გამოცდილება უამრავი bug bounty programs დატრეინინგებაში, <a href="https://hackerone.com/ed">პერსონალური პროგრამის ჩათვლით</a>. Ed-ის <i>Bug Bounty Guide</i>-ის მიზანია განუმარტოს Bug Bounty პროგრამებს და Bug Hunter-ებს უსაფრთხოების პრობლემები რომლებსაც შესაძლოა შეხვხდეთ უსაფრთხოების სფეროში . The <i>Bug Bounty Guide</i> პროქტი რეგულარულად განახლდება დამატებითი ინფორმაციით და tools-ებით.</p>
+      <a href="https://twitter.com/EdOverflow"><div id="author"></div></a>
+
+    <footer>
+      <small>© Copyright EdOverflow - <a href="https://liberapay.com/EdOverflow">პროექტის მხარდაჭერა</a> - ₿ <code>1E2fZRNrrkCKPnWpKZAsJzByBoyoBURADN</code></small>
+    </footer>
+  </div>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  <!--
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  XX                                                                          XX
+  XX   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMMMMMMMMMMssssssssssssssssssssssssssMMMMMMMMMMMMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMMMMMss'''                          '''ssMMMMMMMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMyy''                                    ''yyMMMMMMMMMMMM   XX
+  XX   MMMMMMMMyy''                                            ''yyMMMMMMMM   XX
+  XX   MMMMMy''                                                    ''yMMMMM   XX
+  XX   MMMy'                                                          'yMMM   XX
+  XX   Mh'                                                              'hM   XX
+  XX   -                                                                  -   XX
+  XX                                                                          XX
+  XX   ::                                                                ::   XX
+  XX   MMhh.        ..hhhhhh..                      ..hhhhhh..        .hhMM   XX
+  XX   MMMMMh   ..hhMMMMMMMMMMhh.                .hhMMMMMMMMMMhh..   hMMMMM   XX
+  XX   ---MMM .hMMMMdd:::dMMMMMMMhh..        ..hhMMMMMMMd:::ddMMMMh. MMM---   XX
+  XX   MMMMMM MMmm''      'mmMMMMMMMMyy.  .yyMMMMMMMMmm'      ''mmMM MMMMMM   XX
+  XX   ---mMM ''             'mmMMMMMMMM  MMMMMMMMmm'             '' MMm---   XX
+  XX   yyyym'    .              'mMMMMm'  'mMMMMm'              .    'myyyy   XX
+  XX   mm''    .y'     ..yyyyy..  ''''      ''''  ..yyyyy..     'y.    ''mm   XX
+  XX           MN    .sMMMMMMMMMss.   .    .   .ssMMMMMMMMMs.    NM           XX
+  XX           N`    MMMMMMMMMMMMMN   M    M   NMMMMMMMMMMMMM    `N           XX
+  XX            +  .sMNNNNNMMMMMN+   `N    N`   +NMMMMMNNNNNMs.  +            XX
+  XX              o+++     ++++Mo    M      M    oM++++     +++o              XX
+  XX                                oo      oo                                XX
+  XX           oM                 oo          oo                 Mo           XX
+  XX         oMMo                M              M                oMMo         XX
+  XX       +MMMM                 s              s                 MMMM+       XX
+  XX      +MMMMM+            +++NNNN+        +NNNN+++            +MMMMM+      XX
+  XX     +MMMMMMM+       ++NNMMMMMMMMN+    +NMMMMMMMMNN++       +MMMMMMM+     XX
+  XX     MMMMMMMMMNN+++NNMMMMMMMMMMMMMMNNNNMMMMMMMMMMMMMMNN+++NNMMMMMMMMM     XX
+  XX     yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy     XX
+  XX   m  yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy  m   XX
+  XX   MMm yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy mMM   XX
+  XX   MMMm .yyMMMMMMMMMMMMMMMM     MMMMMMMMMM     MMMMMMMMMMMMMMMMyy. mMMM   XX
+  XX   MMMMd   ''''hhhhh       odddo          obbbo        hhhh''''   dMMMM   XX
+  XX   MMMMMd             'hMMMMMMMMMMddddddMMMMMMMMMMh'             dMMMMM   XX
+  XX   MMMMMMd              'hMMMMMMMMMMMMMMMMMMMMMMh'              dMMMMMM   XX
+  XX   MMMMMMM-               ''ddMMMMMMMMMMMMMMdd''               -MMMMMMM   XX
+  XX   MMMMMMMM                   '::dddddddd::'                   MMMMMMMM   XX
+  XX   MMMMMMMM-                                                  -MMMMMMMM   XX
+  XX   MMMMMMMMM                                                  MMMMMMMMM   XX
+  XX   MMMMMMMMMy                                                yMMMMMMMMM   XX
+  XX   MMMMMMMMMMy.                                            .yMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMy.                                        .yMMMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMMMy.                                    .yMMMMMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMMMMMs.                                .sMMMMMMMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMMMMMMMss.           ....           .ssMMMMMMMMMMMMMMMMMM   XX
+  XX   MMMMMMMMMMMMMMMMMMMMNo         oNNNNo         oNMMMMMMMMMMMMMMMMMMMM   XX
+  XX                                                                          XX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  -->
+</body>
+</html>
